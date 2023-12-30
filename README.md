@@ -41,6 +41,8 @@ run:
 
 create dim_dates (the actual macro code) and run it: ```dbt run -s dim_dates ```
 
+font: https://medium.com/indiciumtech/date-dimension-how-to-create-a-practical-and-useful-date-dimension-in-dbt-5ee70a18f3bb
+
 ### About the data
 ![Transfermarkt Data Diagram](https://github.com/dcaribou/transfermarkt-datasets/blob/master/resources/diagram.svg?raw=true)
 
