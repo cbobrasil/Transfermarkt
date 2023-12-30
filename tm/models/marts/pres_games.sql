@@ -17,13 +17,14 @@ with cte_cards as
       , club_id
       , card_type
   )
+
 select
       ge.game_id
-    , ge.competition_id
-    , c.country_id as competition_country_id
     , ge.date 
-    , ge.home_club_id
-    , ge.away_club_id
+    , c.name as competition_name
+    , c.country_name as competition_country
+    , ge.home_club_name
+    , ge.away_club_name
     , ge.home_club_goals
     , ge.away_club_goals
     , case 
