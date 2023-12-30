@@ -6,14 +6,14 @@ with cte_cards as
   select    
         game_id
       , club_id      
-	    , card_type
+      , card_type
       , count(*) as event_qtt 
   from    {{ ref('stg_game_events') }} 
     where type = 'Cards'
-	group by
+  group by
         game_id
       , club_id
-	    , card_type
+      , card_type
   )
 select
       ge.game_id
