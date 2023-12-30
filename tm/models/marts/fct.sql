@@ -20,27 +20,11 @@ with cte_cards as
 select
       ge.game_id
     , ge.competition_id
-    , ge.competition_type
-    , ge.season
-    , ge.round
-    , ge.date
+    , md5(string(ge.date)) as date_key 
     , ge.home_club_id
     , ge.away_club_id
     , ge.home_club_goals
     , ge.away_club_goals
-    , ge.home_club_position
-    , ge.away_club_position
-    , ge.home_club_manager_name
-    , ge.away_club_manager_name
-    , ge.stadium
-    , ge.attendance
-    , ge.referee
-    , ge.url
-    , ge.home_club_formation
-    , ge.away_club_formation
-    , ge.home_club_name
-    , ge.away_club_name
-    , ge.aggregate
     , case 
         when cte_cards_home.card_type = 'Yellow card'
         then cte_cards_home.event_qtt 
