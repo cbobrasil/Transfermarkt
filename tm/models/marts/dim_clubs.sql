@@ -1,12 +1,14 @@
-
 {{ config(materialized='table') }}
 
 select
-       club_id
+        club_id
       , club_code
       , name
       , domestic_competition_id
+      , squad_size
+      , average_age
       , foreigners_number
+      , foreigners_percentage
       , national_team_players
       , stadium_name
       , stadium_seats
@@ -15,5 +17,5 @@ select
       , last_season
       , filename
       , url
-from    
-    {{ ref('clubs') }}
+from
+  {{ ref('stg_players') }} as p

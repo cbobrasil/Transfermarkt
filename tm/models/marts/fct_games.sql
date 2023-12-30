@@ -20,7 +20,7 @@ with cte_cards as
 select
       ge.game_id
     , ge.competition_id
-    , md5(string(ge.date)) as date_key 
+    , ge.date 
     , ge.home_club_id
     , ge.away_club_id
     , ge.home_club_goals
