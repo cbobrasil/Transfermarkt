@@ -27,6 +27,20 @@ The objective here is to create a model structure to deal with the Transfermarkt
             appearance_id: varchar(32)
 - 
 
+- To create the dim_date table
+create the packages.yml file in the same level that dbt_project
+
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 1.1.1
+  - package: calogica/dbt_date
+    version: 0.9.1
+
+run:
+dbt deps
+
+create dim_dates and run it 
+
 ### About the data
 ![Transfermarkt Data Diagram](https://github.com/dcaribou/transfermarkt-datasets/blob/master/resources/diagram.svg?raw=true)
 
