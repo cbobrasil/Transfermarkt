@@ -67,3 +67,6 @@ When we start to refresh data on the next step of the project we need to underst
 
 #### Snapshots
 We will do snapshots on the changes for the full refresh tables. With this we maitain the history of this table.
+
+#### Create schemas for each dbt layer 
+We need to split the model folders in this project into different schemas as prostgres db. After it, we should create users and give different access in the schemas. 
