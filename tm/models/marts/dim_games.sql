@@ -2,26 +2,26 @@
 
 
 select
-      game_id
-    , competition_id
-    , season
-    , round
-    , date
-    , home_club_id
-    , away_club_id
-    , home_club_position
-    , away_club_position
-    , home_club_manager_name
-    , away_club_manager_name
-    , stadium
-    , attendance
-    , referee
-    , url
-    , home_club_formation
-    , away_club_formation
-    , home_club_name
-    , away_club_name
-    , aggregate
-    , competition_type
+      g.game_id
+    , g.competition_id
+    , g.season
+    , g.round
+    , g.date
+    , g.home_club_id
+    , g.away_club_id
+    , g.home_club_position
+    , g.away_club_position
+    , g.home_club_manager_name
+    , g.away_club_manager_name
+    , g.stadium
+    , g.attendance
+    , g.referee
+    , g.url
+    , g.home_club_formation
+    , g.away_club_formation
+    , g.home_club_name
+    , g.away_club_name
+    , g.aggregate
+    , g.competition_type
 from    
-    {{ ref('stg_games') }}
+    {{ ref('stg_games') }} as g 

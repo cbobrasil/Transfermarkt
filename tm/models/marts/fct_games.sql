@@ -20,6 +20,7 @@ with cte_cards as
 select
       ge.game_id
     , ge.competition_id
+    , c.country_id as competition_country_id
     , ge.date 
     , ge.home_club_id
     , ge.away_club_id
@@ -45,9 +46,14 @@ select
         then cte_cards_away.event_qtt 
         else 0
       end as card_red_away_qtt
+    , cg.is_win as home_club_win
 from     
   {{ ref('stg_games') }} as ge
 left join 
   cte_cards as cte_cards_home on ge.game_id = cte_cards_home.game_id and  ge.home_club_id = cte_cards_home.club_id
 left join 
   cte_cards as cte_cards_away on ge.game_id = cte_cards_away.game_id and  ge.away_club_id = cte_cards_away.club_id
+left join 
+    {{ ref('stg_club_games') }} as cg on ge.game_id = cg.game_id  and cg.club_id = ge.home_club_id
+left join 
+    {{ ref('stg_competitions') }} as c on ge.competition_id = c.competition_id
