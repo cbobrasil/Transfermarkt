@@ -8,38 +8,38 @@ The objective here is to create a model structure to deal with the Transfermarkt
 
 ### Guide:
 
-- python -m pip install dbt-postgres (https://docs.getdbt.com/docs/core/pip-install)
+- ```python -m pip install dbt-postgres``` (https://docs.getdbt.com/docs/core/pip-install)
 
-- dbt init (https://docs.getdbt.com/reference/commands/init)
+- ```dbt init``` (https://docs.getdbt.com/reference/commands/init)
 
-- dbt seed -s file1 (import the data )
+- ```dbt seed -s file1``` (import the data )
 
-    Problem with dbt seed: 
+- Problem with dbt seed: 
 
     https://docs.getdbt.com/reference/resource-configs/column_types
 
     Added this code to dbt_project.yml:
-
+```
     seeds:
     tm: 
         appearances:
         +column_types:
             appearance_id: varchar(32)
-- 
-
+```
 - To create the dim_date table
-create the packages.yml file in the same level that dbt_project
-
+create the ```packages.yml``` file in the same level that ```dbt_project.yml```
+```
 packages:
   - package: dbt-labs/dbt_utils
     version: 1.1.1
   - package: calogica/dbt_date
     version: 0.9.1
+```
 
 run:
-dbt deps
+```dbt deps```
 
-create dim_dates and run it 
+create dim_dates (the actual macro code) and run it: ```dbt run -s dim_dates ```
 
 ### About the data
 ![Transfermarkt Data Diagram](https://github.com/dcaribou/transfermarkt-datasets/blob/master/resources/diagram.svg?raw=true)
