@@ -1,2 +1,0 @@
-# Transfermarkt
-Transfermarkt dbt project
