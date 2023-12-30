@@ -8,8 +8,10 @@ with cte_cards as
       , club_id      
       , card_type
       , count(*) as event_qtt 
-  from    {{ ref('stg_game_events') }} 
-    where type = 'Cards'
+  from    
+    {{ ref('stg_game_events') }} 
+  where
+    type = 'Cards'
   group by
         game_id
       , club_id
