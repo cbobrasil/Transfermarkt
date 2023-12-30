@@ -1,0 +1,76 @@
+
+version: 2
+
+models:
+  - name: stg_appearances
+    description: Show the information about each player of each game. Goals and assistence done, time played, cards. 
+    columns:
+      - name: appearance_id
+        description: The primary key for stg_appearances table 
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_club_games
+    description: Informations about each game per club. The result of the game, it was home os hostage and the manager at that game.
+    columns:
+      - name: game_id
+        description: The primary key for stg_club_games table 
+        tests:
+          - unique
+          - not_null
+
+
+  - name: stg_clubs
+    description: General informations about the club.
+    columns:
+      - name: club_id
+        description: The primary key for stg_clubs table 
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_competitions
+    description: General information about the competitions (appears in clubs, games, player_valuations and players tables)
+    columns:
+      - name: competition_id
+        description: The primary key for competitions table 
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_game_events
+    description: Specific information about each event of each game. 
+    columns:
+      - name: game_event_id
+        description: The primary key for stg_game_events table 
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_game_lineups
+    description: Information about the line-up starting and substitutes of each game.
+    columns:
+      - name: game_lineups_id
+        description: The primary key for stg_game_lineups table 
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_games
+    description: Information about the specific games
+    columns:
+      - name: game_id
+        description: The primary key for stg_games table 
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_player_valuations
+    description: Information about the market value of each player in a period of time 
+    columns:
+      - name: find it. It´s not player_id
+        description: The primary key for stg_player_evaluations table 
+        tests:
+          - unique
+          - not_null

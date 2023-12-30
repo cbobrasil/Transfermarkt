@@ -33,6 +33,7 @@ The objective here is to create a model structure to deal with the Transfermarkt
 
 https://data.world/dcereijo/player-scores-demo
 
+### Next Steps
 
 #### Refreshing data
 When we start to refresh data on the next step of the project we need to understand witch data need to be incrementally updated?
@@ -46,3 +47,7 @@ When we start to refresh data on the next step of the project we need to underst
 - games: incremental (don´t need to do a full refresh, better to just add the new games)
 - player_valuations: incremental (have information along the time)
 - players: full refresh (have mutable informations about each player like the actual club and the value in market)
+
+
+#### Snapshots
+We will do snapshots on the changes for the full refresh tables. With this we maitain the history of this table.
