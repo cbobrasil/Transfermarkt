@@ -1,3 +1,5 @@
 tm-env/
 tm/seeds/
 api-env
+transfermarkt-datasets
+transfermarkt-scraper
