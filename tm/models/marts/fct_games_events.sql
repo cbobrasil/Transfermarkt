@@ -8,7 +8,6 @@ select
     , player_id
     , minute
     , type
-    , sub_type
     , case 
         when type = 'Cards' and sub_type like '%Yellow%' then 'Yellow'
         when  type = 'Cards' and sub_type like '%Yellow%' then 'Red'

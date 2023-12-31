@@ -1,0 +1,6 @@
+
+version: 2
+
+models:
+  - name: pres_games
+    description: Agregated data about games  
